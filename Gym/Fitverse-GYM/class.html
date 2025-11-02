@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Classes</title>
+    <link rel="stylesheet" href="class.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="schedule">
+        <div class="class">
+            <div class="container">
+                <div class="left-section">
+                    <h1>WANT IT ALL. GET IT TOGETHER.</h1>
+                    <p>Earn back your initiation. Offer ends soon.</p>
+                    <button class="cta-button">Get Started</button>
+                </div>
+                <div class="right-section">
+                    <h2>Gym Class Schedule</h2>
+                    
+                    <!-- Search filter -->
+                    <input type="text" id="searchInput" placeholder="Search for classes or days..." onkeyup="filterTable()">
+
+                    <table id="classTable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">Class</th>
+                                <th onclick="sortTable(1)">Day</th>
+                                <th onclick="sortTable(2)">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Weight Training</td>
+                                <td>Monday</td>
+                                <td>6:00 PM - 7:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Muscle Gain</td>
+                                <td>Tuesday</td>
+                                <td>5:00 PM - 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Weight Training</td>
+                                <td>Wednesday</td>
+                                <td>7:00 PM - 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Muscle Gain</td>
+                                <td>Thursday</td>
+                                <td>6:30 PM - 7:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Weight Training</td>
+                                <td>Friday</td>
+                                <td>5:30 PM - 6:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Muscle Gain</td>
+                                <td>Saturday</td>
+                                <td>9:00 AM - 10:00 AM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Fitness Hub | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        function highlightToday() {
+            const today = new Date().toLocaleString('en-US', { weekday: 'long' });
+            const rows = document.querySelectorAll('#classTable tbody tr');
+            
+            rows.forEach(row => {
+                const dayCell = row.cells[1];
+                if (dayCell.innerText === today) {
+                    row.style.backgroundColor = '#d4edda';
+                    row.style.fontWeight = 'bold';
+                }
+            });
+        }
+
+        function filterTable() {
+            const input = document.getElementById('searchInput').value.toUpperCase();
+            const table = document.getElementById('classTable');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const classCell = rows[i].getElementsByTagName('td')[0];
+                const dayCell = rows[i].getElementsByTagName('td')[1];
+                if (classCell || dayCell) {
+                    const classText = classCell.textContent || classCell.innerText;
+                    const dayText = dayCell.textContent || dayCell.innerText;
+                    if (classText.toUpperCase().indexOf(input) > -1 || dayText.toUpperCase().indexOf(input) > -1) {
+                        rows[i].style.display = '';
+                    } else {
+                        rows[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        function sortTable(n) {
+            const table = document.getElementById('classTable');
+            let rows, switching, i, x, y, shouldSwitch, dir, switchCount = 0;
+            switching = true;
+            dir = 'asc';
+
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName('TD')[n];
+                    y = rows[i + 1].getElementsByTagName('TD')[n];
+
+                    if (dir === 'asc') {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir === 'desc') {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchCount++;
+                } else {
+                    if (switchCount === 0 && dir === 'asc') {
+                        dir = 'desc';
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+        window.onload = highlightToday;
+    </script>
+</body>
+</html>

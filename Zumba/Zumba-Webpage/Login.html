@@ -1,0 +1,161 @@
+style<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Fitness Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0; /* Light background color */
+            color: rgba(255, 255, 255, 0.932);
+        }
+        
+        .login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+            background: url('https://cdn.pixabay.com/photo/2020/10/10/21/54/performers-5644247_1280.jpg') no-repeat center center/cover;
+        }
+        
+        /* .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        } */
+        .login-container {
+            background-color: rgba(169, 128, 128, 0.046);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            /* -webkit-backdrop-filter: blur(10px); */
+        }
+        
+        .login-container h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .login-container p {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .input-group input:focus {
+            border-color: #007bff; /* Focus border color */
+            outline: none;
+        }
+        
+        .btn {
+            background-color: #007bff; /* Button background color */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        
+        .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .signup-link a {
+            color: #007bff; /* Link color */
+            text-decoration: none;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<section class="login">
+    <div class="login-container">
+        <h1>Welcome Back!</h1>
+        <p>Please log in to continue.</p>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="btn">Log In</button>
+        </form>
+        <p class="signup-link">Don't have an account? <a href="SignUp.html">Sign up here</a></p>
+        <p id="error-message" style="color: red; display: none;">Invalid email or password.</p>
+    </div>
+</section>
+
+<script>
+    const loginForm = document.getElementById('login-form');
+    const errorMessage = document.getElementById('error-message');
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const enteredEmail = document.getElementById('email').value;
+        const enteredPassword = document.getElementById('password').value;
+
+        // Get data from local storage
+        const storedEmail = localStorage.getItem('email');
+        const storedPassword = localStorage.getItem('password');
+
+        // Check if email and password match
+        if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+            window.location.href = "zumba.html"; // Redirect to welcome page on success
+        } else {
+            errorMessage.style.display = 'block'; // Show error message
+        }
+    });
+</script>
+
+</body>
+</html>

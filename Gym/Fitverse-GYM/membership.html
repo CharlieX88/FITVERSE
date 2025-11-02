@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="membership.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="body">
+    <div class="glass-container">
+      <section class="pricing" id="pricing">
+        <header class="section-header">
+          <h3>Membership Plans</h3>
+          <h1>Join the Perfect Plan for You</h1>
+          <p>Choose from our tailored plans designed to help you achieve your fitness goals through energetic Zumba
+            sessions and specialized training.</p>
+        </header>
+        <div class="pricing-contents">
+
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <span class="pricing-card-title">Silver</span>
+              <div class="price-circle">
+                <span class="price"><i>$</i>12.99</span>
+                <span class="desc">/ Month</span>
+              </div>
+            </div>
+            <div class="pricing-card-body">
+              <ul>
+                <li><i class="fa-solid fa-check"></i> 12 Zumba Classes</li>
+                <li><i class="fa-solid fa-check"></i> 2 Body Conditioning Sessions</li>
+                <li><i class="fa-solid fa-check"></i> Access to Special Zumba Events</li>
+                <li><i class="fa-solid fa-check"></i> Monthly Fitness Assessment</li>
+              </ul>
+              <button class="btn price-plan-btn-1">Select Plan</button>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <div class="tag-box">
+                <span class="tag">Recommended</span>
+              </div>
+              <span class="pricing-card-title">Gold</span>
+              <div class="price-circle">
+                <span class="price"><i>$</i>36.99</span>
+                <span class="desc">/ Month</span>
+              </div>
+            </div>
+            <div class="pricing-card-body">
+              <ul>
+                <li><i class="fa-solid fa-check"></i> 25 Zumba Classes</li>
+                <li><i class="fa-solid fa-check"></i> 5 Body Conditioning Sessions</li>
+                <li><i class="fa-solid fa-check"></i> 1 Personal Training Session</li>
+                <li><i class="fa-solid fa-check"></i> Access to Special Zumba Events</li>
+                <li><i class="fa-solid fa-check"></i> Monthly Fitness Assessment</li>
+              </ul>
+              <button class="btn price-plan-btn-2">Select Plan</button>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <span class="pricing-card-title">Platinum</span>
+              <div class="price-circle">
+                <span class="price"><i>$</i>74.99</span>
+                <span class="desc">/ Month</span>
+              </div>
+            </div>
+            <div class="pricing-card-body">
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Unlimited Zumba Classes</li>
+                <li><i class="fa-solid fa-check"></i> 10 Body Conditioning Sessions</li>
+                <li><i class="fa-solid fa-check"></i> 3 Personal Training Sessions</li>
+                <li><i class="fa-solid fa-check"></i> Access to Special Zumba Events</li>
+                <li><i class="fa-solid fa-check"></i> Monthly Fitness Assessment</li>
+                <li><i class="fa-solid fa-check"></i> Priority Booking for Workshops</li>
+              </ul>
+              <button class="btn price-plan-btn-3">Select Plan</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Trainers</title>
+    <link rel="stylesheet" href="trainer.css">
+</head>
+<body>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <!-- Trainer 1 -->
+            <div class="card" onclick="openModal('modal1')">
+                <div class="img-box">
+                    <img src="Trainer-1.png" alt="Alzari Joseph">
+                </div>
+                <div class="text-box">
+                    <h2>Alzari Joseph</h2>
+                    <h3>Cardio Specialist</h3>
+                    <p>Meet our Cardio Specialist, dedicated to boosting your endurance and cardiovascular health.</p>
+                </div>
+            </div>
+
+            <!-- Trainer 2 -->
+            <div class="card" onclick="openModal('modal2')">
+                <div class="img-box">
+                    <img src="Trainer-2.png" alt="Fabien Allen">
+                </div>
+                <div class="text-box">
+                    <h2>Fabien Allen</h2>
+                    <h3>Personal Trainer</h3>
+                    <p>Our Personal Trainer provides individualized support tailored to your fitness journey.</p>
+                </div>
+            </div>
+
+            <!-- Trainer 3 -->
+            <div class="card" onclick="openModal('modal3')">
+                <div class="img-box">
+                    <img src="Trainer-3.png" alt="Joshua Little">
+                </div>
+                <div class="text-box">
+                    <h2>Joshua Little</h2>
+                    <h3>Weight Training Coach</h3>
+                    <p>Our Weight Training Coach specializes in strength and muscle building.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Alzari Joseph</h2>
+            <p>Detailed information about Alzari Joseph's training methods and achievements.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Fabien Allen</h2>
+            <p>Detailed information about Fabien Allen's training methods and achievements.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Joshua Little</h2>
+            <p>Detailed information about Joshua Little's training methods and achievements.</p>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Function to open modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        // Function to close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Scroll to top function
+        window.onscroll = function() {
+            const scrollButton = document.querySelector('.scroll-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

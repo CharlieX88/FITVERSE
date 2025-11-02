@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="Gym.css">
+</head>
+<style>
+#fitness-data {
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-top: 50px;
+  margin-left: 500px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  text-align: center;
+}
+#fitness-data ul {
+  list-style: none;
+  padding: 0;
+}
+
+#fitness-data li {
+  font-size: 18px;
+  margin: 8px 0;
+}
+#update-data-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 600px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+#update-data-btn:hover {
+  background-color: #45a049;
+}
+
+#update-data-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+</style>
+
+<body>
+  <nav>
+    <div class="logo">
+      <h1 id="one">FitVerse</h1>
+    </div>
+    <div class="menu-bar" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger Menu -->
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#trainers">Trainers</a></li>
+      <li><a href="#schedule">Classes</a></li>
+      <li><a href="#plans">Plans</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <button class="login-btn"><a href="D:\Web D\FitVerse\Home Page\sign in.html">Sign In</a></button>
+      <button class="signup-btn"><a href="D:\Web D\FitVerse\Home Page\Sign Up.html">Sign Up</a></button>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section class="hero" id="home">
+    <div class="overlay1">
+      <div class="content">
+        <h1>Transform your body and mind with personalized fitness programs tailored to your goals—join us today</h1>
+        <button class="join-btn"><a href="D:\Web D\FitVerse\Home Page\Sign Up.html">Join Us</a></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-hero" id="about">
+    <div class="overlay2">
+      <div class="about-content">
+        <h1>About Us</h1>
+        <p class="highlight">
+          Welcome to FitVerse — Your Ultimate Destination for Fitness Transformation!
+        </p>
+        <p>
+          At FitVerse, we are more than just a gym—we are a community that empowers individuals to reach their full
+          fitness potential. Our mission is to inspire and support you on your journey to a healthier, stronger, and
+          more confident version of yourself.
+        </p>
+        <p>
+          <strong>Tailored Fitness Programs:</strong> From weight loss to muscle gain, our programs are designed to suit
+          your personal goals.
+        </p>
+        <p>
+          <strong>Group Classes & Personal Training:</strong> Whether you prefer group workouts or one-on-one training,
+          we provide a range of options to fit your lifestyle and fitness level.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team" id="trainers">
+    <div class="container" id="slider">
+      <!-- Trainer 1 -->
+      <div class="card left" id="card1">
+        <div class="img-box">
+          <img src="Trainer-1.png" alt="Alzari Joseph">
+        </div>
+        <div class="text-box">
+          <h2>Alzari Joseph</h2>
+          <h3>Cardio Specialist</h3>
+          <p>Meet our expert Cardio Specialist, dedicated to enhancing your endurance and improving your cardiovascular
+            health.</p>
+
+        </div>
+      </div>
+
+      <!-- Trainer 2 -->
+      <div class="card center" id="card2">
+        <div class="img-box">
+          <img src="Trainer-2.png" alt="Fabien Allen">
+        </div>
+        <div class="text-box">
+          <h2>Fabien Allen</h2>
+          <h3>Personal Trainer</h3>
+          <p>Our dedicated Personal Trainer is here to provide individualized support tailored to your unique fitness
+            journey.</p>
+
+        </div>
+      </div>
+
+      <!-- Trainer 3 -->
+      <div class="card right" id="card3">
+        <div class="img-box">
+          <img src="Trainer-3.png" alt="Joshua Little">
+        </div>
+        <div class="text-box">
+          <h2>Joshua Little</h2>
+          <h3>Weight Training Coach</h3>
+          <p>Meet our dedicated Weight Training Coach, who specializes in strength and muscle building. With years of
+            experience in the fitness industry, our coach has a proven track record of helping individuals achieve their
+            fitness goals..</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="fitness-data">
+    <h2>Fitness Data:</h2>
+    <ul>
+      <li>Push-ups: 0</li>
+      <li>Squats: 0</li>
+      <li>Lunges: 0</li>
+    </ul>
+  </div>
+
+  <button id="update-data-btn">Update Fitness Data</button>
+
+  <!--Plans-->
+
+  <div class="body" id="plans">
+    <div class="glass-container">
+      <section class="pricing" id="pricing">
+        <header class="section-header">
+          <h3>Membership Plans</h3>
+          <h1>Join the Perfect Plan for You</h1>
+        </header>
+        <div class="pricing-contents">
+
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <span class="pricing-card-title">Silver</span>
+              <div class="price-circle">
+                <span class="price"><i>$</i>12.99</span>
+                <span class="desc">/ Month</span>
+              </div>
+            </div>
+            <div class="pricing-card-body">
+              <ul>
+                <li><i class="fa-solid fa-check"></i> 12 Zumba Classes</li>
+                <li><i class="fa-solid fa-check"></i> 2 Body Conditioning Sessions</li>
+                <li><i class="fa-solid fa-check"></i> Access to Special Zumba Events</li>
+                <li><i class="fa-solid fa-check"></i> Monthly Fitness Assessment</li>
+              </ul>
+              <button class="btn price-plan-btn-1">Select Plan</button>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <div class="tag-box">
+                <span class="tag">Recommended</span>
+              </div>
+              <span class="pricing-card-title">Gold</span>
+              <div class="price-circle">
+                <span class="price"><i>$</i>36.99</span>
+                <span class="desc">/ Month</span>
+              </div>
+            </div>
+            <div class="pricing-card-body">
+              <ul>
+                <li><i class="fa-solid fa-check"></i> 25 Zumba Classes</li>
+                <li><i class="fa-solid fa-check"></i> 5 Body Conditioning Sessions</li>
+                <li><i class="fa-solid fa-check"></i> 1 Personal Training Session</li>
+                <li><i class="fa-solid fa-check"></i> Monthly Fitness Assessment</li>
+              </ul>
+              <button class="btn price-plan-btn-2">Select Plan</button>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <span class="pricing-card-title">Platinum</span>
+              <div class="price-circle">
+                <span class="price"><i>$</i>74.99</span>
+                <span class="desc">/ Month</span>
+              </div>
+            </div>
+            <div class="pricing-card-body">
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Unlimited Gym Classes</li>
+                <li><i class="fa-solid fa-check"></i> 3 Personal Training Sessions</li>
+                <li><i class="fa-solid fa-check"></i> Access to Special Gym Events</li>
+                <li><i class="fa-solid fa-check"></i> Monthly Fitness Assessment</li>
+              </ul>
+              <button class="btn price-plan-btn-3">Select Plan</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!--Classes-->
+
+  <body>
+    <div class="schedule" id="schedule">
+      <div class="class">
+        <div class="container">
+          <div class="left-section">
+            <h1>WANT IT ALL. GET IT TOGETHER.</h1>
+            <p>Earn back your initiation. Offer ends soon.</p>
+            <button class="cta-button">Get Started</button>
+          </div>
+          <div class="right-section">
+            <h2>Gym Class Schedule</h2>
+
+            <!-- Search filter -->
+            <input type="text" id="searchInput" placeholder="Search for classes or days..." onkeyup="filterTable()">
+
+            <table id="classTable">
+              <thead>
+                <tr>
+                  <th onclick="sortTable(0)">Class</th>
+                  <th onclick="sortTable(1)">Day</th>
+                  <th onclick="sortTable(2)">Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Weight Training</td>
+                  <td>Monday</td>
+                  <td>6:00 PM - 7:00 PM</td>
+                </tr>
+                <tr>
+                  <td>Muscle Gain</td>
+                  <td>Tuesday</td>
+                  <td>5:00 PM - 6:00 PM</td>
+                </tr>
+                <tr>
+                  <td>Weight Training</td>
+                  <td>Wednesday</td>
+                  <td>7:00 PM - 8:00 PM</td>
+                </tr>
+                <tr>
+                  <td>Muscle Gain</td>
+                  <td>Thursday</td>
+                  <td>6:30 PM - 7:30 PM</td>
+                </tr>
+                <tr>
+                  <td>Weight Training</td>
+                  <td>Friday</td>
+                  <td>5:30 PM - 6:30 PM</td>
+                </tr>
+                <tr>
+                  <td>Muscle Gain</td>
+                  <td>Saturday</td>
+                  <td>9:00 AM - 10:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER Section -->
+
+      <section class="page-footer">
+        <div class="footer-contents">
+
+          <div class="footer-col footer-col-1">
+            <div class="footer-col-title">
+              <h3>About Us</h3>
+            </div>
+            <div class="footer-col-desc">
+              <p>Your journey to a healthier lifestyle starts here! Join us for energizing Zumba sessions and more.</p>
+              <span>321 Dance Avenue, California, USA</span>
+              <span>+91 985xx xxxxx</span>
+              <span>info@FitVerse.com</span>
+              <div class="footer-social-media">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col footer-col-2">
+            <div class="footer-col-title">
+              <h3>Quick Links</h3>
+            </div>
+            <div class="footer-col-desc">
+              <a href=".page-footer">Home</a>
+              <a href="#about">About</a>
+              <a href="#trainers">Trainers</a>
+              <a href="#schedule">Classes</a>
+              <a href="#pricing">Pricing</a>
+            </div>
+          </div>
+
+          <div class="footer-col footer-col-3">
+            <div class="footer-col-title">
+              <h3>Feedback</h3>
+            </div>
+            <div class="footer-col-desc">
+              <p>We'd love to hear your thoughts! Share your feedback with us to help improve our services.</p>
+              <form class="newsletter">
+                <textarea placeholder="type here ...." required></textarea>
+                <button class="btn newsletter-btn" type="submit" onclick="popup()">Submit</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- COPYRIGHT -->
+
+      <footer id="copyrgt">
+        <p>&copy; 2024 FitVerse &nbsp | &nbsp All Rights Reserved</p>
+      </footer>
+
+      <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+      <script src="index.js"></script>
+       
+  </body>
+
+</html>
+

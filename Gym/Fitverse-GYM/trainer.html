@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="trainer.css">
+    <title>Our Trainers</title>
+</head>
+
+<body>
+
+    <section class="team">
+        <div class="container" id="slider">
+
+            <div class="card left" id="card1">
+                <div class="img-box">
+                    <img src="Trainer-1.png" alt="Alzari Joseph">
+                </div>
+                <div class="text-box">
+                    <h2>Alzari Joseph</h2>
+                    <h3>Cardio Specialist</h3>
+                    <p>Meet our expert Cardio Specialist, dedicated to enhancing your endurance and improving your
+                        cardiovascular health. With a wealth of experience in designing effective cardiovascular
+                        programs, our specialist creates tailored workout routines that cater to your fitness level and
+                        goals. Whether you're looking to increase stamina, lose weight, or simply lead a healthier
+                        lifestyle, our Cardio Specialist will provide you with personalized guidance, motivation, and
+                        the right techniques to maximize your performance!</p>
+                </div>
+            </div>
+
+            <div class="card center" id="card2">
+                <div class="img-box">
+                    <img src="Trainer-2.png" alt="Fabien Allen">
+                </div>
+                <div class="text-box">
+                    <h2>Fabien Allen</h2>
+                    <h3>Personal Trainer</h3>
+                    <p>Our dedicated Personal Trainer is here to provide individualized support tailored to your unique
+                        fitness journey. With a deep understanding of various training techniques and methodologies, our
+                        trainer works closely with you to develop a personalized fitness plan that aligns with your
+                        specific goals, whether it’s weight loss, muscle gain, or improved athletic performance. They
+                        offer continuous motivation, expert guidance, and accountability to ensure you stay on track and
+                        achieve the results you desire.</p>
+                </div>
+            </div>
+            
+            <div class="card right" id="card3">
+                <div class="img-box">
+                    <img src="Trainer-3.png" alt="Joshua Little">
+                </div>
+                <div class="text-box">
+                    <h2>Joshua Little</h2>
+                    <h3>Weight Training Coach</h3>
+                    <p>Meet our dedicated Weight Training Coach, who specializes in strength and muscle building. With
+                        years of experience in the fitness industry, our coach has a proven track record of helping
+                        individuals achieve their fitness goals. Whether you're a beginner looking to get started with
+                        weight training or an experienced athlete aiming to optimize your performance, our coach offers
+                        personalized training programs tailored to your unique needs. Experience guidance on proper
+                        lifting techniques, workout plans, and nutrition advice to maximize your results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let currentIndex = 1;
+        const totalSlides = 3;
+        function rotateSlides() {
+            const card1 = document.getElementById("card1");
+            const card2 = document.getElementById("card2");
+            const card3 = document.getElementById("card3");
+
+            if (currentIndex === 1) {
+                card1.classList.remove("left", "center", "right");
+                card1.classList.add("right");
+                card2.classList.remove("center", "right", "left");
+                card2.classList.add("left");
+                card3.classList.remove("right", "left", "center");
+                card3.classList.add("center");
+                currentIndex = 2;
+            } else if (currentIndex === 2) {
+                card1.classList.remove("left", "center", "right");
+                card1.classList.add("center");
+                card2.classList.remove("center", "right", "left");
+                card2.classList.add("right");
+                card3.classList.remove("right", "left", "center");
+                card3.classList.add("left");
+                currentIndex = 3;
+            } else {
+                card1.classList.remove("left", "center", "right");
+                card1.classList.add("left");
+                card2.classList.remove("center", "right", "left");
+                card2.classList.add("center");
+                card3.classList.remove("right", "left", "center");
+                card3.classList.add("right");
+                currentIndex = 1;
+            }
+        }
+        setInterval(rotateSlides, 3000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <style>
+        /* Basic CSS for form styling */
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #fff;
+            font-size: 1.2rem;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('sign up.jpg');
+            background-size: cover;
+        }
+
+        .signup-container {
+            padding: 30px;
+            border-radius: 8px;
+            width: 300%;
+            max-width: 400px;
+            background-color: rgba(31, 30, 30, 0.273);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .signup-container p{
+            text-align: center;
+            color: whitesmoke;
+        }
+        h1 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 2.2rem;
+            text-align: center;
+            color: whitesmoke;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 95%;
+            padding: 10px;
+            border: 1px outset #ccc;
+            border-radius: 2px;
+        }
+
+        .btn {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-left: 100px;
+            width: 50%;
+            padding: 18px;
+            background-color: black;
+            color: whitesmoke;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-link a {
+            color: rgba(255, 255, 255, 0.87);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<section class="signup">
+    <div class="signup-container">
+        <h1>Create Your Account</h1>
+        <p>Join Us To Achieve Your Fitness Goals !</p>
+        <form id="signup-form">
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+            </div>
+
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <!-- <p class="login-link">Already have an account? <a href="Login.html">Log in here</a></p> -->
+    </div>
+</section>
+
+<script>
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form from submitting
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        // Check if password and confirm password match
+        if (password !== confirmPassword) {
+            alert('Passwords do not match');
+            return;
+        }
+
+        alert('Account created successfully! Redirecting to login page.');
+
+        // Save data to localStorage
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+
+
+        // Clear form
+        document.getElementById('signup-form').reset();
+
+        window.location.href = 'Home.html';
+    });
+</script>
+
+</body>
+</html>
